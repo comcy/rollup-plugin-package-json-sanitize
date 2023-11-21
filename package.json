@@ -1,11 +1,14 @@
 {
-  "name": "rollup-plugin-package-clean",
+  "name": "@rollup/plugin-package-clean",
   "version": "1.0.0",
   "description": "This is a rollup plugin to clean several sections from a package.json during build process before publishing it.",
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "build": "npx rollup -c",
+    "build:prod": "npx rollup -c --environment NODE_ENV:prod",
+    "build:dev": "npx rollup -c --environment NODE_ENV:dev",
+    "build:watch": "npx rollup -c --watch --environment NODE_ENV:dev",
+    "build": "npm run build:prod",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -15,8 +18,25 @@
     "@rollup/plugin-node-resolve": "^15.2.3",
     "@rollup/plugin-terser": "^0.4.4",
     "@rollup/pluginutils": "^5.0.5",
+    "@types/fs-extra": "^11.0.2",
+    "@types/node": "^20.8.0",
+    "@types/rollup": "^0.54.0",
+    "del": "^7.1.0",
     "fs": "^0.0.1-security",
     "fs-extra": "^11.1.1",
-    "rollup": "^4.5.0"
+    "node-buildtools": "file:./dist",
+    "rollup": "^4.5.0",
+    "rollup-plugin-analyzer": "^4.0.0",
+    "rollup-plugin-banner": "^0.2.1",
+    "rollup-plugin-copy": "^3.5.0",
+    "rollup-plugin-delete": "^2.0.0",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-typescript2": "^0.36.0",
+    "ts-node": "^10.9.1",
+    "tslib": "^2.6.2",
+    "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "fs-extra": "^11.1.1"
   }
 }
