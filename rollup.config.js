@@ -4,7 +4,7 @@ import terser from '@rollup/plugin-terser';
 export default {
   input: 'src/index.js', // Der Einstiegspunkt für das Plugin
   output: {
-    file: 'dist/bundle.js', // Der Ausgabeort für das gebündelte Plugin
+    file: 'dist/index.js', // Der Ausgabeort für das gebündelte Plugin
     format: 'cjs' // Das Format des Ausgabebundles (CommonJS in diesem Fall)
   },
   plugins: [
