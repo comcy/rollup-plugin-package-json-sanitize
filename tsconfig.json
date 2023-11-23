@@ -1,11 +1,12 @@
 {
-    "extends": "@tsconfig/node14/tsconfig.json",
     "compilerOptions": {
-        "outDir": "dist",
-        "module": "esnext",
+        "forceConsistentCasingInFileNames": true,
+        "strict": true,
+        "outDir": "build",
+        "module": "ESNext",
         "declaration": true,
-        "declarationDir": "dist/dts",
-        "moduleResolution": "node",
+        "declarationDir": "build/dts",
+        "moduleResolution": "Node",
         "esModuleInterop": true,
         "lib": [
             "es2020",

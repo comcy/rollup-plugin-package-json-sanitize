@@ -2,13 +2,14 @@
   "name": "@rollup/plugin-package-clean",
   "version": "1.0.0",
   "description": "This is a rollup plugin to clean several sections from a package.json during build process before publishing it.",
-  "main": "index.js",
+  "main": "./build/index.js",
   "type": "module",
   "scripts": {
+    "clean": "rm -rf ./dist && rm -rf ./build",
     "build:prod": "npx rollup -c --environment NODE_ENV:prod",
     "build:dev": "npx rollup -c --environment NODE_ENV:dev",
     "build:watch": "npx rollup -c --watch --environment NODE_ENV:dev",
-    "build": "npm run build:prod",
+    "build": "npm run clean && tsc && npm run build:prod",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
