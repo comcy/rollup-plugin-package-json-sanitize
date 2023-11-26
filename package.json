@@ -21,7 +21,6 @@
     "@rollup/pluginutils": "^5.0.5",
     "@types/fs-extra": "^11.0.2",
     "@types/node": "^20.8.0",
-    "@types/rollup": "^0.54.0",
     "del": "^7.1.0",
     "fs": "^0.0.1-security",
     "fs-extra": "^11.1.1",

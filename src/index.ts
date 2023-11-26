@@ -4,7 +4,7 @@ import { readFileSync, writeFileSync } from "fs";
 class RemoveScriptsFromPackageJSON implements Plugin {
   name = "modifyPackageJSON";
 
-  generateBundle(_, bundle) {
+  generateBundle(_: unknown, bundle: unknown) {
     const packageJSONPath = "package.json"; // Pfad zur package.json-Datei
     const packageJSON = JSON.parse(readFileSync(packageJSONPath, "utf-8"));
 
