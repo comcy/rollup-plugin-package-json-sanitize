@@ -10,7 +10,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [14.x] # Node.js-Version, die getestet werden soll
+        node-version: [18.x] # Node.js-Version, die getestet werden soll
 
     steps:
     - uses: actions/checkout@v2 # Lädt den Code-Repository herunter
