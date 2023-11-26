@@ -1,10 +1,10 @@
-import { Plugin } from "rollup";
+import { OutputBundle, Plugin } from "rollup";
 import { readFileSync, writeFileSync } from "fs";
 
 class RemoveScriptsFromPackageJSON implements Plugin {
   name = "modifyPackageJSON";
 
-  generateBundle(_: unknown, bundle: unknown) {
+  generateBundle(_: any, bundle: OutputBundle) {
     const packageJSONPath = "package.json"; // Pfad zur package.json-Datei
     const packageJSON = JSON.parse(readFileSync(packageJSONPath, "utf-8"));
 
