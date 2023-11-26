@@ -25,3 +25,6 @@ jobs:
 
     # - name: Run tests
     #   run: npm test # Führt Tests aus
+
+    - name: Run build:prod
+      run: npm run build:prod

@@ -1,6 +1,6 @@
 {
   "name": "@rollup/plugin-package-clean",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "This is a rollup plugin to clean several sections from a package.json during build process before publishing it.",
   "main": "./build/index.js",
   "type": "module",
@@ -25,7 +25,6 @@
     "del": "^7.1.0",
     "fs": "^0.0.1-security",
     "fs-extra": "^11.1.1",
-    "node-buildtools": "file:./dist",
     "rollup": "^4.5.0",
     "rollup-plugin-analyzer": "^4.0.0",
     "rollup-plugin-banner": "^0.2.1",
