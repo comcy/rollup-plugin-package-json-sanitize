@@ -16,7 +16,7 @@ console.log(`${devMode ? "dev" : "prod"} mode bundle`);
 export default {
   input: "src/index.ts",
   output: {
-    file: "dist/index.js", // ES module format
+    file: "dist/index.js",
     format: "esm",
     sourcemap: devMode ? "inline" : false,
     plugins: [
@@ -35,9 +35,9 @@ export default {
   },
   plugins: [
     nodeResolve(),
-    terser(),
     peerDepsExternal(),
     typescript(),
+    terser(),
     analyze(),
     modifyPackageJSON({
       test: "test",
