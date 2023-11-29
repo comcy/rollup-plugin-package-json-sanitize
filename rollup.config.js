@@ -5,7 +5,7 @@ import copy from "rollup-plugin-copy";
 import peerDepsExternal from "rollup-plugin-peer-deps-external";
 import typescript from "rollup-plugin-typescript2";
 
-import modifyPackageJSON from "./build/index.js"; // Passe den Pfad entsprechend an
+import cleanPackageJson from "./build/index.js"; // Passe den Pfad entsprechend an
 
 const EXEC_BANNER = "#!/usr/bin/env node";
 const PROJECT_ARTIFACTS = ["LICENSE", "README.md", "package.json"];
@@ -39,8 +39,9 @@ export default {
     typescript(),
     terser(),
     analyze(),
-    modifyPackageJSON({
-      test: "test",
+    cleanPackageJson({
+      op: "remove",
+      props: ["devDependencies", "scripts"],
     }),
     copy({
       targets: [
