@@ -4,9 +4,9 @@
 
 import { readFileSync, writeFileSync } from "fs";
 import { OutputBundle, Plugin } from "rollup";
-import { Parameter } from "./parameter";
+import { CliParameter } from "./cli";
 
-export default function cleanPackageJSON(parameters: Parameter): Plugin {
+export default function cleanPackageJSON(parameters: CliParameter): Plugin {
   if (!parameters) {
     console.log("No parameters given");
     throw new Error("No parameters given");
