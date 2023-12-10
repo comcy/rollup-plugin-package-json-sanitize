@@ -40,9 +40,26 @@ export default {
     terser(),
     analyze(),
     cleanPackageJson({
-      op: "remove",
-      props: ["devDependencies", "scripts"],
+      sourceFilePath: "./package.json",
+      targetFilePath: "package.json",
+      targetDirectory: "./dist",
+      config: [
+        {
+          operation: "remove",
+          propertyName: "devDependencies",
+        },
+      ],
     }),
+    // {
+    //   operation: "Remove",
+    //   propertyName: "devDependencies",
+    // },
+    // {
+    //   operation: "Add",
+    //   propertyName: "hallo",
+    //   value: "welt",
+    // }
+    // ),
     copy({
       targets: [
         {
