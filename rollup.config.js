@@ -41,8 +41,8 @@ export default {
     analyze(),
     cleanPackageJson({
       sourceFilePath: "./package.json",
-      targetFilePath: "package.json",
       targetDirectory: "./dist",
+      targetFileName: "package.json",
       config: [
         {
           operation: "remove",
