@@ -11,7 +11,7 @@ interface Parameter {
 
 interface Configuration {
   operation: Operation;
-  propertyName: Property;
+  properties: string[];
   value?: string;
 }
 
@@ -21,15 +21,10 @@ type CliParameter = Parameter &
 
 const OPERATION = {
   remove: "Remove",
-  add: "Add",
+  add: "Add", // Currently not supported
 } as const;
 
-const PROPERTY = {
-  scripts: "scripts",
-  devDependencies: "devDependencies",
-} as const;
 
-type Property = keyof typeof PROPERTY;
 type Operation = keyof typeof OPERATION;
 
-export { Operation, Property, CliParameter };
+export { Operation, CliParameter };

@@ -5,10 +5,10 @@ import copy from "rollup-plugin-copy";
 import peerDepsExternal from "rollup-plugin-peer-deps-external";
 import typescript from "rollup-plugin-typescript2";
 
-import cleanPackageJson from "./build/index.js"; // Passe den Pfad entsprechend an
+import sanitizePkgJson from "./build/index.js";
 
 const EXEC_BANNER = "#!/usr/bin/env node";
-const PROJECT_ARTIFACTS = ["LICENSE", "README.md", "package.json"];
+const PROJECT_ARTIFACTS = ["LICENSE", "README.md"];
 
 const devMode = process.env.NODE_ENV === "dev";
 console.log(`${devMode ? "dev" : "prod"} mode bundle`);
@@ -25,8 +25,8 @@ export default {
         compress: {
           module: true,
           unsafe_arrows: true,
-          drop_console: devMode ? false : true, // DEBUG
-          drop_debugger: devMode ? false : true, // DEBUG
+          drop_console: devMode ? false : true,
+          drop_debugger: devMode ? false : true,
         },
         output: { quote_style: 1 },
       }),
@@ -39,27 +39,14 @@ export default {
     typescript(),
     terser(),
     analyze(),
-    cleanPackageJson({
-      sourceFilePath: "./package.json",
-      targetDirectory: "./dist",
-      targetFileName: "package.json",
+    sanitizePkgJson({
       config: [
         {
           operation: "remove",
-          propertyName: "devDependencies",
+          properties: ["dependencies", "devDependencies", "scripts"],
         },
       ],
     }),
-    // {
-    //   operation: "Remove",
-    //   propertyName: "devDependencies",
-    // },
-    // {
-    //   operation: "Add",
-    //   propertyName: "hallo",
-    //   value: "welt",
-    // }
-    // ),
     copy({
       targets: [
         {

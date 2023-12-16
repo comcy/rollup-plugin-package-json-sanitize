@@ -1,8 +1,8 @@
 {
-  "name": "@rollup/plugin-package-clean",
+  "name": "@rollup/plugin-package-json-sanitize",
   "version": "0.1.0",
   "description": "This is a rollup plugin to clean several sections from a package.json during build process before publishing it.",
-  "main": "./build/index.js",
+  "main": "./index.js",
   "type": "module",
   "scripts": {
     "clean": "rm -rf ./dist && rm -rf ./build",
@@ -14,16 +14,19 @@
   },
   "keywords": [],
   "author": "Christian Silfang",
-  "license": "MIT",
+  "license": "MIT License",
+  "copyright": "Copyright (c) 2023 Christian Silfang",
+  "peerDependencies": {
+    "fs": "^0.0.1-security",
+    "rollup": "^4.x"
+  },
   "devDependencies": {
     "@rollup/plugin-node-resolve": "^15.2.3",
     "@rollup/plugin-terser": "^0.4.4",
     "@rollup/pluginutils": "^5.0.5",
-    "@types/fs-extra": "^11.0.2",
     "@types/node": "^20.8.0",
     "del": "^7.1.0",
     "fs": "^0.0.1-security",
-    "fs-extra": "^11.1.1",
     "rollup": "^4.5.0",
     "rollup-plugin-analyzer": "^4.0.0",
     "rollup-plugin-banner": "^0.2.1",
