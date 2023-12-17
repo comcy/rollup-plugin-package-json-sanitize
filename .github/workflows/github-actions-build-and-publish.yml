@@ -17,10 +17,10 @@ jobs:
       id-token: write
 
     steps:
-      - uses: actions/checkout@v2 # Lädt den Code-Repository herunter
+      - uses: actions/checkout@v3 # Lädt den Code-Repository herunter
 
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
 
@@ -34,6 +34,6 @@ jobs:
         run: npm run build
 
       - name: Publish artifacts
-        run: npm publish ./dist --provenance --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: npm publish ./dist --provenance --access public
