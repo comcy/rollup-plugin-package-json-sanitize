@@ -1,7 +1,6 @@
 {
-  "name": "plugin-package-json-sanitize",
-  "scope": "@comcy",
-  "version": "0.1.0-alpha",
+  "name": "@rollup/plugin-package-json-sanitize",
+  "version": "0.1.0-alpha.0",
   "description": "This is a rollup plugin to clean several sections from a package.json during build process before publishing it.",
   "main": "./index.js",
   "type": "module",
@@ -15,7 +14,7 @@
   },
   "keywords": [],
   "author": "Christian Silfang",
-  "license": "MIT License",
+  "license": "MIT",
   "copyright": "Copyright (c) 2023 Christian Silfang",
   "peerDependencies": {
     "fs": "^0.0.1-security",
@@ -41,5 +40,9 @@
   },
   "dependencies": {
     "fs-extra": "^11.1.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/comcy/rollup-plugin-package-json-sanitize"
   }
 }
