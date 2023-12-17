@@ -1,7 +1,6 @@
 name: npm package build & publish package-clean
 run-name: ${{ github.actor }} triggered ${{ github.workflow }} on ${{ github.event_name }} event
-permissions:
-  id-token: write
+
 on:
   push:
     branches: [master] # Trigger für Push auf den Hauptbranch
@@ -13,6 +12,9 @@ jobs:
     strategy:
       matrix:
         node-version: [18.x] # Node.js-Version, die getestet werden soll
+
+    permissions:
+      id-token: write
 
     steps:
       - uses: actions/checkout@v2 # Lädt den Code-Repository herunter
@@ -33,5 +35,5 @@ jobs:
 
       - name: Publish artifacts
         run: npm publish ./dist --provenance --access public
-        with:
+        env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
