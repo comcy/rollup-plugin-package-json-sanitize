@@ -21,20 +21,17 @@ This is a rollup plugin to clean several sections from a package.json during bui
 ### Parameters
 
 | Name              | Required | Type   | Default          | Description                                                |
-| :---------------- | :------- | ------ | :--------------- | ---------------------------------------------------------- |
+| :---------------- | :------- | ------ | :--------------- | :--------------------------------------------------------- |
 | `sourceFilePath`  | false    | string | `./package.json` | The `package.json` which should be sanitized               |
 | `targetDirectory` | false    | string | `./dist`         | The destination directory name                             |
 | `targetFileName`  | false    | string | `package.json`   | The name of your destination file                          |
 | `config`          | true     | Object | -                | The plugin configuration for sanitizing the `package.json` |
 
-**Supported Configuration**
+#### Supported Configuration
 
 `remove`
 
-- Types: `string[]`
-- The `remove` operation can be used to remove properties and all according values from a `package.json` file. The properties to remove are declared as a `string[]`
-
-The `remove` operation can be used to remove properties and according values from a `package.json` file. The properties to remove are declared as a `string[]`
+- The `remove` operation can be used to remove properties and according values from a `package.json` file. The properties to remove are declared as a `string[]`Types: `string[]`
 
 ### Example configuration
 
