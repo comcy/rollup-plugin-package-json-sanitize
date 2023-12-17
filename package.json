@@ -1,6 +1,6 @@
 {
-  "name": "@rollup/plugin-package-json-sanitize",
-  "version": "0.1.0-alpha.0",
+  "name": "rollup-plugin-package-json-sanitize",
+  "version": "0.1.0-alpha.1",
   "description": "This is a rollup plugin to clean several sections from a package.json during build process before publishing it.",
   "main": "./index.js",
   "type": "module",
