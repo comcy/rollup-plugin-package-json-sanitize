@@ -33,3 +33,5 @@ jobs:
 
       - name: Publish artifacts
         run: npm publish ./dist --provenance --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
