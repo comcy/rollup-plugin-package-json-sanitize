@@ -31,7 +31,7 @@ This is a rollup plugin to clean several sections from a package.json during bui
 
 `remove`
 
-- The `remove` operation can be used to remove properties and according values from a `package.json` file. The properties to remove are declared as a `string[]`Types: `string[]`
+- The `remove` operation can be used to remove properties and according values from a `package.json` file. The properties to remove are declared as `string[]` (`Array<string>`)
 
 ### Example configuration
 
